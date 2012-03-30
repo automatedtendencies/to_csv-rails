@@ -21,7 +21,7 @@ class Array
     self.each do |obj|
       data << columns.map{ |column| obj.send(column) }.join(', ')
     end
-    data.join("\n")
+    data.join("\n").gsub!(', ',',')
   end
   
 end
