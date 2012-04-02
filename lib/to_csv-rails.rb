@@ -42,7 +42,7 @@ class Array
     data << columns.map(&:to_s).map(&:humanize).join(',') if options[:header]
 
     self.each do |obj|
-      data << columns.map{ |column| obj.send(fix_stupid_quotes!(column)) }.join(',')
+      data << columns.map{ |column| obj.send(fix_stupid_quotes!(column.to_s)) }.join(',')
     end
     data.join("\n")
   end
