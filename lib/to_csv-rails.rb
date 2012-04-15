@@ -1,7 +1,7 @@
 class Array
   
   def fix_stupid_quotes!(s) 
-    return if s.class != String
+    return s if s.class != String
     s.gsub! "\u2019", "'"
     s.gsub! "\u2018", "'"
     s.gsub! "\u201C","\""
